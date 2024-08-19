@@ -1,7 +1,7 @@
-package org.marcoant;
+package com.marcoantdev.hexagonalarchitecture;
 
 public class QuarkusMain {
   public static void main(String[] args) {
-    System.out.println("Hello world!");
+
   }
 }
