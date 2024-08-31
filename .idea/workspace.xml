@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="feat: add more init configures">
-      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/domain/models/ExpenseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/google_checks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,14 +57,18 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/magalu/Projetos/quarkus-hexagonal-architecture",
+    "last_opened_file_path": "/home/magalu/Projetos/quarkus-hexagonal-architecture/target",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.34035087",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+    "settings.editor.selected.configurable": "preferences.sourceCode"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/target" />
+      <recent name="$PROJECT_DIR$/resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/quarkus-application" />

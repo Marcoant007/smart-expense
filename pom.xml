@@ -22,6 +22,8 @@
         <quarkus.version>3.2.0.Final</quarkus.version>
 
         <!-- Versões das Dependências -->
+        <checkstyle.version>10.15.0</checkstyle.version>
+        <maven-checkstyle-plugin.version>3.12.0</maven-checkstyle-plugin.version>
         <quarkus-resteasy.version>3.2.0.Final</quarkus-resteasy.version>
         <quarkus-hibernate-orm-panache.version>3.2.0.Final</quarkus-hibernate-orm-panache.version>
         <quarkus-jdbc-h2.version>3.2.0.Final</quarkus-jdbc-h2.version>
@@ -39,6 +41,40 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.puppycrawl.tools</groupId>
+                <artifactId>checkstyle</artifactId>
+                <version>${checkstyle.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <configLocation>${basedir}/resources/google_checks.xml</configLocation>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
 </project>
