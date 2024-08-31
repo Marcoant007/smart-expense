@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="feat: add more init configures">
-      <change afterPath="$PROJECT_DIR$/resources/google_checks.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="feat: add checkstyle configuration">
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/CreateExpenseUseCaseImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ListExpenseUseCaseImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ports/CreateExpenseUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ports/ListExpenseUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/domain/repository/ExpenseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/dtos/ExpenseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/dtos/ExpenseResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/infrastructure/DatabaseSeeder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/test/java/CreateExpensesUseCaseImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +27,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -51,6 +60,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.QuarkusMain.executor": "Run",
+    "JUnit.CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense.executor": "Run",
+    "JUnit.CreateExpensesUseCaseImplTest.executor": "Run",
     "Maven.quarkus-hexagonal-architecture [-Dmutation.skip=true...].executor": "Run",
     "Quarkus (Maven).Quarkus Dev Hx.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -61,7 +72,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.34035087",
-    "settings.editor.selected.configurable": "preferences.sourceCode"
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -73,6 +84,9 @@
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/quarkus-application" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -81,7 +95,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Quarkus (Maven).Quarkus Dev Hx">
+  <component name="RunManager" selected="JUnit.CreateExpensesUseCaseImplTest">
     <configuration name="QuarkusMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.marcoant.QuarkusMain" />
       <module name="quarkus-application" />
@@ -91,6 +105,25 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateExpensesUseCaseImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="quarkus-application" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CreateExpensesUseCaseImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="quarkus-application" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CreateExpensesUseCaseImplTest" />
+      <option name="METHOD_NAME" value="createExpense_shouldReturnCreatedExpense" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -108,11 +141,15 @@
     </configuration>
     <list>
       <item itemvalue="Application.QuarkusMain" />
+      <item itemvalue="JUnit.CreateExpensesUseCaseImplTest" />
+      <item itemvalue="JUnit.CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense" />
       <item itemvalue="Quarkus (Maven).Quarkus Dev Hx" />
       <item itemvalue="Quarkus Dev Mode.quarkus-application" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CreateExpensesUseCaseImplTest" />
+        <item itemvalue="JUnit.CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense" />
         <item itemvalue="Application.QuarkusMain" />
       </list>
     </recent_temporary>
@@ -142,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724107920777</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: add checkstyle configuration">
+      <option name="closed" value="true" />
+      <created>1725129471550</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725129471550</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,6 +204,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: idea" />
     <MESSAGE value="feat: add more init configures" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add more init configures" />
+    <MESSAGE value="feat: add checkstyle configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add checkstyle configuration" />
   </component>
 </project>
