@@ -4,33 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="feat: add checkstyle configuration">
-      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/CreateExpenseUseCaseImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ListExpenseUseCaseImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ports/CreateExpenseUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ports/ListExpenseUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/domain/repository/ExpenseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/dtos/ExpenseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/dtos/ExpenseResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/infrastructure/DatabaseSeeder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/test/java/CreateExpensesUseCaseImplTest.java" afterDir="false" />
+    <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="feat: add new use cases and dto and tests">
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/UploadExpensesUseCaseImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ports/UploadExpensesUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/dtos/ExpensePdfDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/utils/ProcessPdfUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/quarkus-application/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/test/java/CreateExpensesUseCaseImplTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,6 +45,9 @@
     &quot;accountId&quot;: &quot;1a739743-308c-4597-8534-5385d2bb27ca&quot;
   }
 }</component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -68,10 +72,11 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/magalu/Projetos/quarkus-hexagonal-architecture/target",
+    "last_opened_file_path": "/home/magalu/Projetos/quarkus-hexagonal-architecture",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.34035087",
+    "rearrange.code.on.save": "true",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
@@ -95,7 +100,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CreateExpensesUseCaseImplTest">
+  <component name="RunManager" selected="Quarkus (Maven).Quarkus Dev Hx">
     <configuration name="QuarkusMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.marcoant.QuarkusMain" />
       <module name="quarkus-application" />
@@ -148,8 +153,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CreateExpensesUseCaseImplTest" />
         <item itemvalue="JUnit.CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense" />
+        <item itemvalue="JUnit.CreateExpensesUseCaseImplTest" />
         <item itemvalue="Application.QuarkusMain" />
       </list>
     </recent_temporary>
@@ -187,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725129471550</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: add new use cases and dto and tests">
+      <option name="closed" value="true" />
+      <created>1725136679970</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725136679970</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,6 +218,17 @@
     <MESSAGE value="feat: idea" />
     <MESSAGE value="feat: add more init configures" />
     <MESSAGE value="feat: add checkstyle configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add checkstyle configuration" />
+    <MESSAGE value="feat: add new use cases and dto and tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add new use cases and dto and tests" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
