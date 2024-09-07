@@ -16,21 +16,19 @@ public class ProcessPdfUtils {
 
   public Map<String, Double> processPdf(InputStream inputStream) {
     Map<String, Double> expensesMap = new HashMap<>();
-    double totalExpenses = 0.0;
 
     try (PDDocument document = PDDocument.load(inputStream)) {
       PDFTextStripper pdfStripper = new PDFTextStripper();
       String text = pdfStripper.getText(document);
-      Pattern pattern = Pattern.compile("([A-Za-z]+\\s?)+\\s+R\\$\\s([0-9]+,\\d{2})");
+      Pattern pattern = Pattern.compile("([A-Za-zÀ-ÿ\\s]+?)\\s*(Parcela.*?\\d+\\sde\\s\\d+)?\\s*R\\$\\s([0-9]+,\\d{2})");
       Matcher matcher = pattern.matcher(text);
 
       while (matcher.find()) {
         String expenseName = matcher.group(1).trim();
-        String valueString = matcher.group(2).replace(",", ".");
-        double value = Double.parseDouble(valueString);
+        String valueString = matcher.group(3).replace(",", ".");
+        Double value = Double.parseDouble(valueString);
 
         expensesMap.merge(expenseName, value, Double::sum);
-        totalExpenses += value;
       }
     } catch (IOException e) {
       e.printStackTrace();
