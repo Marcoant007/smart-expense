@@ -8,7 +8,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import java.io.InputStream;
-import java.time.LocalDate;
 import java.util.Map;
 
 @ApplicationScoped
@@ -26,8 +25,13 @@ public class UploadExpensesUseCaseImpl implements UploadExpensesUseCase {
     Map<String, Double> groupedExpenses = processPdfUtils.processPdf(inputStream);
 
     groupedExpenses.forEach((description, amount) -> {
-      ExpenseEntity expense = new ExpenseEntity(description, amount, "Importado", LocalDate.now().toString());
-      // expenseRepository.persist(expense);
+      ExpenseEntity expense = ExpenseEntity.builder()
+          .description("Compra no mercado")
+          .amount(150.0)
+          .category("Alimentação")
+          .date("2024-09-01")
+          .build();
+      expenseRepository.persist(expense);
     });
 
     return groupedExpenses;

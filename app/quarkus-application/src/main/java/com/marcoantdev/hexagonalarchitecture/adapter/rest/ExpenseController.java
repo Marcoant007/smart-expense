@@ -21,9 +21,7 @@ import org.jboss.resteasy.annotations.providers.multipart.MultipartForm;
 
 @Path("/expenses")
 public class ExpenseController {
-
   private static final Logger LOGGER = Logger.getLogger(ExpenseController.class);
-
 
   @Inject
   CreateExpenseUseCase createExpenseUseCase;

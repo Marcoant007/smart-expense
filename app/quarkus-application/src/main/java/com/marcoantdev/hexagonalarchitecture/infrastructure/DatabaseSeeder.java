@@ -27,7 +27,13 @@ public class DatabaseSeeder {
     }
 
     LOGGER.info("Seeding db with initial data");
-    ExpenseEntity expense = new ExpenseEntity("Compra no mercado", 150.0, "Alimentação", "2024-09-01");
+    ExpenseEntity expense = ExpenseEntity.builder()
+        .description("Compra no mercado")
+        .amount(150.0)
+        .category("Alimentação")
+        .date("2024-09-01")
+        .build();
+
     expenseRepository.persist(expense);
   }
 }
