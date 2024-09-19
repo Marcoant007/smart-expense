@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="feat: update reggex pattern">
+    <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="fix: fix use cases">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/CreateExpenseUseCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/CreateExpenseUseCaseImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ListExpenseUseCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ListExpenseUseCaseImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ports/CreateExpenseUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ports/CreateExpenseUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ports/ListExpenseUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ports/ListExpenseUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/UploadExpensesUseCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/UploadExpensesUseCaseImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/domain/models/ExpenseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/domain/models/ExpenseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/dtos/ExpenseResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/dtos/ExpenseResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/domain/repository/ExpenseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/domain/repository/ExpenseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/dtos/ExpenseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/dtos/ExpenseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/infrastructure/DatabaseSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/infrastructure/DatabaseSeeder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +37,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {}
@@ -48,6 +48,9 @@
     &quot;accountId&quot;: &quot;1a739743-308c-4597-8534-5385d2bb27ca&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/jboss/resteasy/resteasy-core/6.2.4.Final/resteasy-core-6.2.4.Final.jar!/org/jboss/resteasy/core/MethodInjectorImpl.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
@@ -137,7 +140,7 @@
       </method>
     </configuration>
     <configuration name="Quarkus Dev Hx" type="QuarkusMavenBridge">
-      <option name="jreName" value="23" />
+      <option name="jreName" value="21" />
       <option name="profiles" />
       <option name="vmOptions" value="-Dnet.bytebuddy.experimental=true " />
       <option name="workingDir" value="$PROJECT_DIR$/app/quarkus-application" />
@@ -241,7 +244,8 @@
     <MESSAGE value="feat: add new use cases and dto and tests" />
     <MESSAGE value="feat: add new endpoint of updateExpenses" />
     <MESSAGE value="feat: update reggex pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update reggex pattern" />
+    <MESSAGE value="fix: fix use cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fix use cases" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -259,6 +263,25 @@
           <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/utils/ProcessPdfUtils.java</url>
           <line>21</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java</url>
+          <line>41</line>
+          <properties class="com.marcoantdev.hexagonalarchitecture.adapter.rest.ExpenseController" method="createExpense">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

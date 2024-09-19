@@ -7,19 +7,17 @@ import com.marcoantdev.hexagonalarchitecture.dtos.ExpenseDTO;
 import com.marcoantdev.hexagonalarchitecture.mappers.ExpenseMapper;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.transaction.Transactional;
 
 @ApplicationScoped
 public class CreateExpenseUseCaseImpl implements CreateExpenseUseCase {
 
-    @Inject
-    ExpenseRepository expenseRepository;
+  @Inject
+  ExpenseRepository expenseRepository;
 
-    @Override
-    @Transactional
-    public ExpenseDTO createExpense(ExpenseDTO expenseDTO) {
-        ExpenseEntity expense = ExpenseMapper.toEntity(expenseDTO);
-        expenseRepository.persist(expense);
-        return ExpenseMapper.toDto(expense);
-    }
+  @Override
+  public ExpenseDTO createExpense(ExpenseDTO expenseDTO) {
+    ExpenseEntity expense = ExpenseMapper.toEntity(expenseDTO);
+    expenseRepository.persist(expense);
+    return ExpenseMapper.toDto(expense);
+  }
 }

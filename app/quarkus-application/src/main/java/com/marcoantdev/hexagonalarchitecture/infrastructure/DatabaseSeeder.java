@@ -7,6 +7,7 @@ import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import java.time.LocalDateTime;
 import org.jboss.logging.Logger;
 
 @Startup
@@ -31,7 +32,7 @@ public class DatabaseSeeder {
         .description("Compra no mercado")
         .amount(150.0)
         .category("Alimentação")
-        .date("2024-09-01")
+        .date(LocalDateTime.now())
         .build();
 
     expenseRepository.persist(expense);
