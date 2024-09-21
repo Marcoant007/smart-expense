@@ -1,6 +1,6 @@
 <img src="https://github.com/user-attachments/assets/25c92839-ea33-4930-8bf1-2e6c319c0376" width="200px">
 
-# Quarkus Hexagonal Architecture
+# Smart Expense
 
 ![Quarkus](https://img.shields.io/badge/Quarkus-v3.0-blue) ![MongoDB](https://img.shields.io/badge/MongoDB-v6.0-green) ![License](https://img.shields.io/badge/License-MIT-green)
 
