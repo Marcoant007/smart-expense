@@ -4,12 +4,9 @@ import com.marcoantdev.hexagonalarchitecture.core.usecase.ports.CreateExpenseUse
 import com.marcoantdev.hexagonalarchitecture.core.usecase.ports.ListExpenseUseCase;
 import com.marcoantdev.hexagonalarchitecture.core.usecase.ports.UploadExpensesUseCase;
 import com.marcoantdev.hexagonalarchitecture.dtos.ExpenseDTO;
-import com.marcoantdev.hexagonalarchitecture.dtos.ExpensePdfDto;
+import com.marcoantdev.hexagonalarchitecture.dtos.ExpenseRequestDto;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.jboss.logging.Logger;
@@ -47,13 +44,13 @@ public class ExpenseController {
     @POST
     @Path("/upload")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public Response uploadPdf(@MultipartForm ExpensePdfDto form) {
+    public Response uploadPdf(@MultipartForm ExpenseRequestDto expenseRequestDto, @QueryParam("password") String password) {
         try {
-            Map<String, Double> groupedExpenses = uploadExpensesUseCase.uploadExpenses(form.getFile());
+            Map<String, Double> groupedExpenses = uploadExpensesUseCase.uploadExpenses(expenseRequestDto, password);
             return Response.ok(groupedExpenses).build();
         } catch (Exception e) {
-            LOGGER.error("Erro ao importar PDF: ", e);
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Erro ao importar PDF").build();
+            LOGGER.error("Error to import PDF: ", e);
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Error to import PDF").build();
         }
     }
 }

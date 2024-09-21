@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="fix: fix use cases" />
+    <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="fix: fix use cases">
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/dtos/ExpenseRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/dtos/RequestExpenseParamDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/BasePdfHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/ExtractExpenseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/ExtractTextHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/LoadPdfHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/PdfContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/port/PdfProcessHandlerPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/service/PdfProcessorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/UploadExpensesUseCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/UploadExpensesUseCaseImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ports/UploadExpensesUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ports/UploadExpensesUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/dtos/ExpensePdfDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/utils/ProcessPdfUtils.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,30 +67,32 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2ksfchwIaUVOoOCdzSkNwZNIKeJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.QuarkusMain.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CreateExpensesUseCaseImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.quarkus-hexagonal-architecture [-Dmutation.skip=true...].executor&quot;: &quot;Run&quot;,
-    &quot;Quarkus (Maven).Quarkus Dev Hx.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projetos/quarkus-hexagonal-architecture&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.34035087&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.QuarkusMain.executor": "Run",
+    "JUnit.CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense.executor": "Run",
+    "JUnit.CreateExpensesUseCaseImplTest.executor": "Run",
+    "Maven.quarkus-hexagonal-architecture [-Dmutation.skip=true...].executor": "Run",
+    "Quarkus (Maven).Quarkus Dev Hx.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Projetos/quarkus-hexagonal-architecture",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.34035087",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/target" />
@@ -244,35 +262,61 @@
           <option name="timeStamp" value="1" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/utils/ProcessPdfUtils.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/LoadPdfHandler.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/utils/ProcessPdfUtils.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/LoadPdfHandler.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/core/usecase/ports/UploadExpensesUseCase.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/ExtractTextHandler.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/adapter/rest/ExpenseController.java</url>
-          <line>41</line>
-          <properties class="com.marcoantdev.hexagonalarchitecture.adapter.rest.ExpenseController" method="createExpense">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/ExtractTextHandler.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/ExtractTextHandler.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/ExtractTextHandler.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/ExtractExpenseHandler.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/hexagonalarchitecture/handler/ExtractExpenseHandler.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.apache.pdfbox.pdmodel.PDDocument" memberName="encryption" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Remote">
+        <watch expression="document.documentCatalog" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

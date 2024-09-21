@@ -1,8 +1,9 @@
 package com.marcoantdev.hexagonalarchitecture.core.usecase.ports;
 
-import java.io.InputStream;
+import com.marcoantdev.hexagonalarchitecture.dtos.ExpenseRequestDto;
+
 import java.util.Map;
 
 public interface UploadExpensesUseCase {
-  Map<String, Double> uploadExpenses(InputStream inputStream);
+    Map<String, Double> uploadExpenses(ExpenseRequestDto expenseRequestDto, String password) throws Exception;
 }
