@@ -74,25 +74,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.QuarkusMain.executor": "Run",
-    "JUnit.CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense.executor": "Run",
-    "JUnit.CreateExpensesUseCaseImplTest.executor": "Run",
-    "Maven.quarkus-hexagonal-architecture [-Dmutation.skip=true...].executor": "Run",
-    "Quarkus (Maven).Quarkus Dev Hx.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Projetos/quarkus-hexagonal-architecture",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.34035087",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.QuarkusMain.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateExpensesUseCaseImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.quarkus-hexagonal-architecture [-Dmutation.skip=true...].executor&quot;: &quot;Run&quot;,
+    &quot;Quarkus (Maven).Quarkus Dev Hx.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projetos/quarkus-hexagonal-architecture&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.34035087&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/target" />
