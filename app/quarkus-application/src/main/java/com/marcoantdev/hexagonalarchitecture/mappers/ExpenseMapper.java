@@ -1,11 +1,11 @@
 package com.marcoantdev.hexagonalarchitecture.mappers;
 
 import com.marcoantdev.hexagonalarchitecture.domain.models.ExpenseEntity;
-import com.marcoantdev.hexagonalarchitecture.dtos.ExpenseDTO;
+import com.marcoantdev.hexagonalarchitecture.dtos.ExpenseDto;
 
 public class ExpenseMapper {
-  public static ExpenseDTO toDto(final ExpenseEntity expenseEntity) {
-    return ExpenseDTO.builder()
+  public static ExpenseDto toDto(final ExpenseEntity expenseEntity) {
+    return ExpenseDto.builder()
         .description(expenseEntity.getDescription())
         .amount(expenseEntity.getAmount())
         .category(expenseEntity.getCategory())
@@ -13,7 +13,7 @@ public class ExpenseMapper {
         .build();
   }
 
-  public static ExpenseEntity toEntity(final ExpenseDTO expenseDTO) {
+  public static ExpenseEntity toEntity(final ExpenseDto expenseDTO) {
     return ExpenseEntity.builder()
         .description(expenseDTO.getDescription())
         .amount(expenseDTO.getAmount())

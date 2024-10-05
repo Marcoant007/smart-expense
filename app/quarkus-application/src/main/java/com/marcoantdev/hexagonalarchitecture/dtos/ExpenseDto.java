@@ -1,8 +1,8 @@
 package com.marcoantdev.hexagonalarchitecture.dtos;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -16,7 +16,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 @NoArgsConstructor
 @AllArgsConstructor
 @Schema(name = "ExpenseDTO", description = "Data Transfer Object representing an expense entry")
-public class ExpenseDTO {
+public class ExpenseDto {
 
   @NotNull
   @Size(min = 1, max = 255)
@@ -24,7 +24,7 @@ public class ExpenseDTO {
   private String description;
 
   @NotNull
-  @Min(0)
+  @Positive(message = "Amount must be greater than zero")
   @Schema(description = "Amount of the expense", example = "25.75", required = true)
   private double amount;
 
