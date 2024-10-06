@@ -1,5 +1,6 @@
 package com.marcoantdev.hexagonalarchitecture.service;
 
+import com.marcoantdev.hexagonalarchitecture.exceptions.PdfProcessingException;
 import com.marcoantdev.hexagonalarchitecture.handler.ExtractExpenseHandler;
 import com.marcoantdev.hexagonalarchitecture.handler.ExtractTextHandler;
 import com.marcoantdev.hexagonalarchitecture.handler.LoadPdfHandler;
@@ -16,21 +17,25 @@ import java.util.Map;
 @ApplicationScoped
 public class PdfProcessorService {
 
-    public Map<String, Double> processPdf(InputStream inputStream, String password) throws Exception {
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        inputStream.transferTo(stream);
-        InputStream inputStreamClone = new ByteArrayInputStream(stream.toByteArray());
+    public Map<String, Double> processPdf(InputStream inputStream, String password) {
+        try {
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            inputStream.transferTo(stream);
+            InputStream inputStreamClone = new ByteArrayInputStream(stream.toByteArray());
 
-        PdfContext context = new PdfContext();
-        context.setInputStream(inputStreamClone);
-        context.setPassword(password);
+            PdfContext context = new PdfContext();
+            context.setInputStream(inputStreamClone);
+            context.setPassword(password);
 
-        PdfProcessHandlerPort loadPdf = new LoadPdfHandler();
-        PdfProcessHandlerPort extractText = new ExtractTextHandler();
-        PdfProcessHandlerPort extractExpenses = new ExtractExpenseHandler();
+            PdfProcessHandlerPort loadPdf = new LoadPdfHandler();
+            PdfProcessHandlerPort extractText = new ExtractTextHandler();
+            PdfProcessHandlerPort extractExpenses = new ExtractExpenseHandler();
 
-        loadPdf.setNext(extractText).setNext(extractExpenses);
-        loadPdf.handle(context);
-        return context.getExpenses();
+            loadPdf.setNext(extractText).setNext(extractExpenses);
+            loadPdf.handle(context);
+            return context.getExpenses();
+        } catch (Exception e) {
+            throw new PdfProcessingException("An error occurred while processing the PDF: " + e.getMessage());
+        }
     }
 }

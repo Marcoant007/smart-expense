@@ -1,7 +1,7 @@
 package com.marcoantdev.hexagonalarchitecture.core.usecase.ports;
 
-import com.marcoantdev.hexagonalarchitecture.dtos.ExpenseDTO;
+import com.marcoantdev.hexagonalarchitecture.dtos.ExpenseDto;
 
 public interface CreateExpenseUseCase {
-    ExpenseDTO createExpense(ExpenseDTO expenseDTO);
+    ExpenseDto createExpense(ExpenseDto expenseDTO);
 }

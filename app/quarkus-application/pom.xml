@@ -24,11 +24,6 @@
             <artifactId>quarkus-resteasy-jackson</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-hibernate-validator</artifactId>
-        </dependency>
-
         <!-- MongoDB com Panache -->
         <dependency>
             <groupId>io.quarkus</groupId>
@@ -114,9 +109,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>7.0.5.Final</version>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-validator</artifactId>
         </dependency>
 
         <!-- Swagger Annotations -->
