@@ -1,9 +1,10 @@
 package com.marcoantdev.core.usecase.ports;
 
+import com.marcoantdev.dtos.ExpenseDto;
 import com.marcoantdev.dtos.ExpenseRequestDto;
 
-import java.util.Map;
+import java.util.List;
 
 public interface UploadExpensesUseCase {
-  Map<String, Double> uploadExpenses(ExpenseRequestDto expenseRequestDto, String password) throws Exception;
+    List<ExpenseDto> uploadExpenses(ExpenseRequestDto expenseRequestDto, String password) throws Exception;
 }

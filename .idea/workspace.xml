@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="chore: rename project">
+    <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="feat: handling exceptions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/CreateExpenseUseCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/CreateExpenseUseCaseImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/ListExpenseUseCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/ListExpenseUseCaseImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/rest/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/rest/ExpenseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/UploadExpensesUseCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/UploadExpensesUseCaseImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/domain/models/ExpenseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/domain/models/ExpenseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/ports/UploadExpensesUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/ports/UploadExpensesUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractExpenseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractExpenseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,27 +65,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.QuarkusMain.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CreateExpenseUseCaseImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CreateExpenseUseCaseImplTest.givenValidExpenseDto_whenCreateExpense_thenPersistAndReturnDto.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CreateExpensesUseCaseImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.quarkus-hexagonal-architecture [-Dmutation.skip=true...].executor&quot;: &quot;Run&quot;,
-    &quot;Quarkus (Maven).Quarkus Dev Hx.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/magalu/Projetos/chewbacca-worker&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.34035087&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.QuarkusMain.executor": "Run",
+    "JUnit.CreateExpenseUseCaseImplTest.executor": "Run",
+    "JUnit.CreateExpenseUseCaseImplTest.givenValidExpenseDto_whenCreateExpense_thenPersistAndReturnDto.executor": "Run",
+    "JUnit.CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense.executor": "Run",
+    "JUnit.CreateExpensesUseCaseImplTest.executor": "Run",
+    "Maven.quarkus-hexagonal-architecture [-Dmutation.skip=true...].executor": "Run",
+    "Maven.smart-expense [mvn,clean,install].executor": "Run",
+    "Quarkus (Maven).Quarkus Dev Hx.executor": "Run",
+    "Quarkus Dev Mode.Quarkus Dev.executor": "Run",
+    "Remote JVM Debug.Quarkus Dev (Remote).executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/magalu/Projetos/chewbacca-worker",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.34035087",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/target" />
@@ -108,9 +110,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Quarkus (Maven).Quarkus Dev Hx">
-    <configuration name="QuarkusMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.marcoant.QuarkusMain" />
+  <component name="RunManager" selected="Quarkus Dev Mode.Quarkus Dev">
+    <configuration name="com.marcoantdev.QuarkusMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.marcoantdev.QuarkusMain" />
       <module name="quarkus-application" />
       <extension name="coverage">
         <pattern>
@@ -179,27 +181,32 @@
       <option name="workingDir" value="$PROJECT_DIR$/app/quarkus-application" />
       <method v="2" />
     </configuration>
+    <configuration name="Quarkus Dev" type="QuarkusRunConfiguration" factoryName="QuarkusRunConfiguration">
+      <module name="quarkus-application" />
+      <option name="profile" />
+      <method v="2" />
+    </configuration>
     <configuration name="quarkus-application" type="QuarkusRunConfiguration" factoryName="QuarkusRunConfiguration">
       <module name="quarkus-application" />
       <option name="profile" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.QuarkusMain" />
+      <item itemvalue="Application.com.marcoantdev.QuarkusMain" />
       <item itemvalue="JUnit.CreateExpenseUseCaseImplTest" />
       <item itemvalue="JUnit.CreateExpenseUseCaseImplTest.givenValidExpenseDto_whenCreateExpense_thenPersistAndReturnDto" />
       <item itemvalue="JUnit.CreateExpensesUseCaseImplTest" />
       <item itemvalue="JUnit.CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense" />
-      <item itemvalue="Quarkus (Maven).Quarkus Dev Hx" />
+      <item itemvalue="Quarkus Dev Mode.Quarkus Dev" />
       <item itemvalue="Quarkus Dev Mode.quarkus-application" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CreateExpenseUseCaseImplTest" />
-        <item itemvalue="JUnit.CreateExpenseUseCaseImplTest.givenValidExpenseDto_whenCreateExpense_thenPersistAndReturnDto" />
-        <item itemvalue="Application.QuarkusMain" />
         <item itemvalue="JUnit.CreateExpensesUseCaseImplTest.createExpense_shouldReturnCreatedExpense" />
         <item itemvalue="JUnit.CreateExpensesUseCaseImplTest" />
+        <item itemvalue="JUnit.CreateExpenseUseCaseImplTest.givenValidExpenseDto_whenCreateExpense_thenPersistAndReturnDto" />
+        <item itemvalue="JUnit.CreateExpenseUseCaseImplTest" />
+        <item itemvalue="Application.com.marcoantdev.QuarkusMain" />
       </list>
     </recent_temporary>
   </component>
@@ -345,7 +352,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/ports/UploadExpensesUseCase.java</url>
-          <line>8</line>
+          <line>9</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -367,16 +374,6 @@
           <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractTextHandler.java</url>
           <line>14</line>
           <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractExpenseHandler.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractExpenseHandler.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/exceptions/ConstraintViolationExceptionMapper.java</url>
