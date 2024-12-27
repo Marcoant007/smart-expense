@@ -1,4 +1,4 @@
-package com.marcoantdev.adapter.rest;
+package com.marcoantdev.adapter.controller;
 
 import com.marcoantdev.core.usecase.ports.CreateExpenseUseCase;
 import com.marcoantdev.core.usecase.ports.ListExpenseUseCase;
@@ -42,16 +42,33 @@ public class ExpenseController {
         return Response.status(Response.Status.CREATED).entity(createdExpense).build();
     }
 
+//    @POST
+//    @Path("/upload")
+//    @Consumes(MediaType.MULTIPART_FORM_DATA)
+//    public Response uploadPdf(@MultipartForm ExpenseRequestDto expenseRequestDto, @QueryParam("password") String password) {
+//        try {
+//            List<ExpenseDto> groupedExpenses = uploadExpensesUseCase.uploadExpenses(expenseRequestDto, password);
+//            return Response.ok(groupedExpenses).build();
+//        } catch (Exception e) {
+//            LOGGER.error("Error importing file: ", e);
+//            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Error importing file").build();
+//        }
+//    }
+
+
     @POST
     @Path("/upload")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public Response uploadPdf(@MultipartForm ExpenseRequestDto expenseRequestDto, @QueryParam("password") String password) {
+    public Response uploadFile(@MultipartForm ExpenseRequestDto expenseRequestDto,
+                               @QueryParam("format") String format,
+                               @QueryParam("password") String password) {
         try {
+            expenseRequestDto.setFormat(format);
             List<ExpenseDto> groupedExpenses = uploadExpensesUseCase.uploadExpenses(expenseRequestDto, password);
             return Response.ok(groupedExpenses).build();
         } catch (Exception e) {
-            LOGGER.error("Error to import PDF: ", e);
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Error to import PDF").build();
+            LOGGER.error("Error importing file: ", e);
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Error importing file").build();
         }
     }
 }

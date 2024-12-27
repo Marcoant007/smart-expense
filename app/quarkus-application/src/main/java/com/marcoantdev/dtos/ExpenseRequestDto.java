@@ -13,7 +13,9 @@ import java.io.InputStream;
 @NoArgsConstructor
 public class ExpenseRequestDto {
 
-  @FormParam("file")
-  @PartType("application/octet-stream")
-  private InputStream file;
+    @FormParam("file")
+    @PartType("application/octet-stream")
+    private InputStream file;
+
+    private String format;
 }

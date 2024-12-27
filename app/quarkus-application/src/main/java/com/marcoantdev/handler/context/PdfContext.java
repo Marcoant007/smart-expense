@@ -1,4 +1,4 @@
-package com.marcoantdev.handler;
+package com.marcoantdev.handler.context;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,9 +12,9 @@ import java.util.Map;
 @Setter
 @NoArgsConstructor
 public class PdfContext {
-  private InputStream inputStream;
-  private String password;
-  private PDDocument document;
-  private String extractedText;
-  private Map<String, Double> expenses;
+    private InputStream inputStream;
+    private String password;
+    private PDDocument document;
+    private String extractedText;
+    private Map<String, Double> expenses;
 }

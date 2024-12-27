@@ -4,13 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="feat: handling exceptions">
+    <list default="true" id="157ca565-0cf3-4f7d-9625-347181abfd44" name="Changes" comment="feat: update ExtractExpenseHandler">
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/ports/ExpenseProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/factory/ExpenseProcessorFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/BaseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/LoadHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/context/CsvContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/context/OfxContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/port/ProcessHandlerPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/service/CsvProcessorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/service/OfxProcessorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/rest/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/rest/ExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/rest/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/controller/ExpenseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/UploadExpensesUseCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/UploadExpensesUseCaseImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/ports/UploadExpensesUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/ports/UploadExpensesUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/dtos/ExpenseRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/dtos/ExpenseRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/BasePdfHandler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractExpenseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractExpenseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractTextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractTextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/LoadPdfHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/PdfContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/context/PdfContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/port/PdfProcessHandlerPort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/service/PdfProcessorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/service/PdfProcessorService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +52,12 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {}
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Marcoant007/smart-expense.git&quot;,
-    &quot;accountId&quot;: &quot;1a739743-308c-4597-8534-5385d2bb27ca&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Marcoant007/quarkus-hexagonal-architecture.git",
+    "accountId": "5ffdec37-cfb2-472b-a924-81e1101c959e"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$MAVEN_REPOSITORY$/org/jboss/resteasy/resteasy-core/6.2.4.Final/resteasy-core-6.2.4.Final.jar!/org/jboss/resteasy/core/MethodInjectorImpl.class" root0="SKIP_INSPECTION" />
   </component>
@@ -75,7 +89,7 @@
     "Maven.quarkus-hexagonal-architecture [-Dmutation.skip=true...].executor": "Run",
     "Maven.smart-expense [mvn,clean,install].executor": "Run",
     "Quarkus (Maven).Quarkus Dev Hx.executor": "Run",
-    "Quarkus Dev Mode.Quarkus Dev.executor": "Run",
+    "Quarkus Dev Mode.Quarkus Dev.executor": "Debug",
     "Remote JVM Debug.Quarkus Dev (Remote).executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -86,7 +100,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.34035087",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -341,13 +355,13 @@
           <option name="timeStamp" value="1" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/LoadPdfHandler.java</url>
-          <line>27</line>
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/LoadHandler.java</url>
+          <line>28</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/LoadPdfHandler.java</url>
-          <line>28</line>
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/LoadHandler.java</url>
+          <line>29</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -357,22 +371,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractTextHandler.java</url>
-          <line>11</line>
+          <line>12</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractTextHandler.java</url>
-          <line>12</line>
+          <line>13</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractTextHandler.java</url>
-          <line>13</line>
+          <line>14</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/handler/ExtractTextHandler.java</url>
-          <line>14</line>
+          <line>15</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -425,11 +439,70 @@
           <line>9</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/controller/ExpenseController.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/controller/ExpenseController.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/UploadExpensesUseCaseImpl.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/core/usecase/UploadExpensesUseCaseImpl.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/controller/ExpenseController.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/controller/ExpenseController.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/controller/ExpenseController.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/controller/ExpenseController.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/controller/ExpenseController.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/controller/ExpenseController.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/exceptions/ErrorCode.java</url>
           <line>14</line>
           <properties field="INVALID_REQUEST_SYNTAX" class="com.marcoantdev.exceptions.ErrorCode" />
           <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/app/quarkus-application/src/main/java/com/marcoantdev/adapter/controller/ExpenseController.java</url>
+          <line>61</line>
+          <properties class="com.marcoantdev.adapter.controller.ExpenseController" method="uploadFile">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

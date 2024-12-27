@@ -1,5 +1,6 @@
 package com.marcoantdev.handler;
 
+import com.marcoantdev.handler.context.PdfContext;
 import org.jboss.logging.Logger;
 
 import java.util.HashMap;
@@ -7,8 +8,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ExtractExpenseHandler extends BasePdfHandler {
-    private static final Logger LOGGER = Logger.getLogger(LoadPdfHandler.class);
+public class ExtractExpenseHandler extends BaseHandler<PdfContext> {
+    private static final Logger LOGGER = Logger.getLogger(LoadHandler.class);
 
     private static final Map<String, String> CATEGORY_MAP = Map.of(
             "MERCADO", "Alimentação",
