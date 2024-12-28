@@ -10,7 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @Builder
@@ -19,23 +19,23 @@ import java.time.LocalDateTime;
 @Schema(name = "ExpenseDTO", description = "Data Transfer Object representing an expense entry")
 public class ExpenseDto {
 
-  @NotNull(message = "Description must not be null")
-  @Size(min = 1, max = 255, message = "Description must be between 1 and 255 characters")
-  @Schema(description = "Description of the expense", example = "Lunch at the restaurant", required = true)
-  private String description;
+    @NotNull(message = "Description must not be null")
+    @Size(min = 1, max = 255, message = "Description must be between 1 and 255 characters")
+    @Schema(description = "Description of the expense", example = "Lunch at the restaurant", required = true)
+    private String description;
 
-  @NotNull(message = "Amount must not be null")
-  @Positive(message = "Amount must be greater than zero")
-  @Schema(description = "Amount of the expense", example = "25.75", required = true)
-  private double amount;
+    @NotNull(message = "Amount must not be null")
+    @Positive(message = "Amount must be greater than zero")
+    @Schema(description = "Amount of the expense", example = "25.75", required = true)
+    private double amount;
 
-  @NotNull(message = "Category must not be null")
-  @Size(min = 1, max = 50, message = "Category must be between 1 and 50 characters")
-  @Schema(description = "Category of the expense", example = "Food", required = true)
-  private String category;
+    @NotNull(message = "Category must not be null")
+    @Size(min = 1, max = 50, message = "Category must be between 1 and 50 characters")
+    @Schema(description = "Category of the expense", example = "Food", required = true)
+    private String category;
 
-  @NotNull(message = "Date must not be null")
-  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  @Schema(description = "Date of the expense in format YYYY-MM-DDTHH:MM:SS", example = "2024-09-14T00:00:00", required = true)
-  private LocalDateTime date;
+    @NotNull(message = "Date must not be null")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @Schema(description = "Date of the expense in format YYYY-MM-DD", example = "2024-09-14", required = true)
+    private LocalDate date;
 }

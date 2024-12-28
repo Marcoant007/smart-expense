@@ -1,36 +1,41 @@
 package com.marcoantdev.domain.enums;
 
-import java.util.Arrays;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 import lombok.Getter;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public enum ExpenseCategoryEnum {
-  ALIMENTACAO("Alimentação", "mercado"),
-  TRANSPORTE("Transporte", "transporte"),
-  RESTAURANTES("Restaurantes", "restaurante"),
-  LAZER("Lazer", "lazer"),
-  OUTROS("Outros", "");
+    ALIMENTACAO("Alimentação", Arrays.asList("mercado", "lanchonete", "restaurante", "ifd", "honest")),
+    TRANSPORTE("Transporte", Arrays.asList("transporte", "uber", "99")),
+    RESTAURANTES("Restaurantes", Arrays.asList("pizzaria", "churrascaria", "food", "zamp")),
+    LAZER("Lazer", Arrays.asList("cinema", "show", "teatro")),
+    OUTROS("Outros", Collections.emptyList());
 
-  private static final Map<String, ExpenseCategoryEnum> CATEGORY_MAP =
-      Arrays.stream(values())
-          .collect(Collectors.toMap(c -> c.keyword, Function.identity()));
-  @Getter
-  private final String name;
-  private final String keyword;
+    private static final Map<String, ExpenseCategoryEnum> CATEGORY_MAP =
+            Arrays.stream(values())
+                    .flatMap(c -> c.keywords.stream().map(keyword -> Map.entry(keyword, c)))
+                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
-  ExpenseCategoryEnum(String name, String keyword) {
-    this.name = name;
-    this.keyword = keyword;
-  }
+    @Getter
+    private final String name;
+    private final List<String> keywords;
 
-  public static String fromDescription(String description) {
-    return CATEGORY_MAP.entrySet().stream()
-        .filter(entry -> description.toLowerCase().contains(entry.getKey()))
-        .map(Map.Entry::getValue)
-        .findFirst()
-        .orElse(OUTROS)
-        .getName();
-  }
+    ExpenseCategoryEnum(String name, List<String> keywords) {
+        this.name = name;
+        this.keywords = keywords;
+    }
+
+    public static String fromDescription(String description) {
+        return CATEGORY_MAP.entrySet().stream()
+                .filter(entry -> description.toLowerCase().contains(entry.getKey()))
+                .map(Map.Entry::getValue)
+                .findFirst()
+                .orElse(OUTROS)
+                .getName();
+    }
 }
+

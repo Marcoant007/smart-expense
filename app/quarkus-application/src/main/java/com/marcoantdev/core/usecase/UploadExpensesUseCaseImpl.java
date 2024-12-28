@@ -13,6 +13,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
 import java.io.InputStream;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ public class UploadExpensesUseCaseImpl implements UploadExpensesUseCase {
                     .description(description)
                     .amount(amount)
                     .category(determineCategory(description))
-                    .date(LocalDateTime.now())
+                    .date(LocalDate.now())
                     .createdAt(LocalDateTime.now())
                     .updatedAt(LocalDateTime.now())
                     .build();

@@ -1,12 +1,10 @@
 package com.marcoantdev.service;
 
 import com.marcoantdev.core.usecase.ports.ExpenseProcessor;
-import com.marcoantdev.exceptions.PdfProcessingException;
-import com.marcoantdev.handler.ExtractExpenseHandler;
 import com.marcoantdev.handler.ExtractTextHandler;
 import com.marcoantdev.handler.LoadHandler;
+import com.marcoantdev.handler.categorize.pdf.CategorizePdfExpensesHandler;
 import com.marcoantdev.handler.context.PdfContext;
-import com.marcoantdev.handler.port.ProcessHandlerPort;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import java.io.ByteArrayInputStream;
@@ -29,15 +27,16 @@ public class PdfProcessorService implements ExpenseProcessor {
             context.setInputStream(inputStreamClone);
             context.setPassword(password);
 
-            ProcessHandlerPort<PdfContext> loadPdf = new LoadHandler();
-            ProcessHandlerPort<PdfContext> extractText = new ExtractTextHandler();
-            ProcessHandlerPort<PdfContext> extractExpenses = new ExtractExpenseHandler();
+            LoadHandler loadHandler = new LoadHandler();
+            ExtractTextHandler extractTextHandler = new ExtractTextHandler();
+            CategorizePdfExpensesHandler categorizeHandler = new CategorizePdfExpensesHandler();
 
-            loadPdf.setNext(extractText).setNext(extractExpenses);
-            loadPdf.handle(context);
-            return context.getExpenses();
+            loadHandler.setNext(extractTextHandler).setNext(categorizeHandler);
+            loadHandler.handle(context);
+
+            return context.getExpenses(); // Return cate
         } catch (Exception e) {
-            throw new PdfProcessingException("An error occurred while processing the PDF: " + e.getMessage());
+            throw new RuntimeException("Error processing PDF: " + e.getMessage(), e);
         }
     }
 }

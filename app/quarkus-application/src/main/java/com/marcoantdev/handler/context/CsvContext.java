@@ -3,14 +3,10 @@ package com.marcoantdev.handler.context;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.InputStream;
 import java.util.List;
-import java.util.Map;
 
 @Getter
 @Setter
-public class CsvContext {
-    private InputStream inputStream;
+public class CsvContext extends BaseContext {
     private List<String[]> rows;
-    private Map<String, Double> expenses;
 }
