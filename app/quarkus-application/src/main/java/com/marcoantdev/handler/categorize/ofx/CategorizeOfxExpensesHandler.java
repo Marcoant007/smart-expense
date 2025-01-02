@@ -2,56 +2,66 @@ package com.marcoantdev.handler.categorize.ofx;
 
 import com.marcoantdev.handler.BaseHandler;
 import com.marcoantdev.handler.context.OfxContext;
-import lombok.extern.slf4j.Slf4j;
-
 import java.util.List;
 import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class CategorizeOfxExpensesHandler extends BaseHandler<OfxContext> {
-    private static final Map<String, String> CATEGORY_MAP = Map.of(
-            "MERCADOLIVRE", "Compras",
-            "HORTIFRUTI", "Alimentação",
-            "IFOOD", "Delivery",
-            "UBER", "Transporte",
-            "SUPERMARKET", "Alimentação",
-            "AMAZON", "Compras",
-            "PIX", "Transferência",
-            "GOOGLE", "Assinaturas",
-            "ALMYR", "Alimentação",
-            "IFD", "Alimentação"
-    );
+  private static final Map<String, String> CATEGORY_MAP = Map.of(
+      "MERCADOLIVRE", "Compras",
+      "HORTIFRUTI", "Alimentação",
+      "IFOOD", "Delivery",
+      "UBER", "Transporte",
+      "SUPERMARKET", "Alimentação",
+      "AMAZON", "Compras",
+      "PIX", "Transferência",
+      "GOOGLE", "Assinaturas",
+      "ALMYR", "Alimentação",
+      "IFD", "Alimentação"
+  );
 
-    @Override
-    public void handle(OfxContext context) throws Exception {
-        for (String line : context.getLines()) {
-            if (line.contains("<STMTTRN>")) {
-                String description = extractTagValue(context.getLines(), "<MEMO>");
-                String rawAmount = extractTagValue(context.getLines(), "<TRNAMT>");
-                double amount = Double.parseDouble(rawAmount);
+  @Override
+  public void handle(OfxContext context) throws Exception {
+    List<String> lines = context.getLines();
 
-                String category = identifyCategory(description);
-                context.getExpenses().merge(category, amount, Double::sum);
-            }
-        }
+    for (int i = 0; i < lines.size(); i++) {
+      if (lines.get(i).contains("<STMTTRN>")) {
+        String description = extractTagValue(lines, i, "<MEMO>");
+        String rawAmount = extractTagValue(lines, i, "<TRNAMT>");
+        String date = extractTagValue(lines, i, "<DTPOSTED>");
 
-        log.info("✅ Categorization for OFX completed.");
-        next(context);
+        double amount = Double.parseDouble(rawAmount);
+        String category = identifyCategory(description);
+
+        String key = String.format("%s | %s", description, date);
+        context.getExpenses().merge(key, amount, Double::sum);
+
+        log.info(String.format("Transaction: %s | %.2f | %s | %s", description, amount, category, date));
+      }
     }
 
-    private String extractTagValue(List<String> lines, String tag) {
-        return lines.stream()
-                .filter(line -> line.contains(tag))
-                .map(line -> line.replace(tag, "").replace("</" + tag.substring(1), "").trim())
-                .findFirst()
-                .orElse("");
-    }
+    log.info("✅ OFX Categorization completed successfully.");
+    next(context);
+  }
 
-    private String identifyCategory(String description) {
-        return CATEGORY_MAP.entrySet().stream()
-                .filter(entry -> description.toUpperCase().contains(entry.getKey()))
-                .map(Map.Entry::getValue)
-                .findFirst()
-                .orElse("Outros");
+  private String extractTagValue(List<String> lines, int currentIndex, String tag) {
+    for (int i = currentIndex; i < lines.size(); i++) {
+      if (lines.get(i).contains(tag)) {
+        return lines.get(i)
+            .replace(tag, "")
+            .replace("</" + tag.substring(1), "")
+            .trim();
+      }
     }
+    return "";
+  }
+
+  private String identifyCategory(String description) {
+    return CATEGORY_MAP.entrySet().stream()
+        .filter(entry -> description.toUpperCase().contains(entry.getKey()))
+        .map(Map.Entry::getValue)
+        .findFirst()
+        .orElse("Outros");
+  }
 }
