@@ -18,7 +18,10 @@ public class CategorizeExpensesHandler<T extends BaseContext> extends BaseHandle
             "PIX", "Transferência",
             "AMAZON", "Entretenimento",
             "HORTIFRUTI", "Alimentação",
-            "FARMACIA", "Saúde"
+            "FARMACIA", "Saúde",
+            "VESTUARIO", "Compra Vestuário",
+            "ENTRETENIMENTO", "Streaming",
+            "Ensino", "Estudos"
     );
 
     @Override

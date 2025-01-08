@@ -2,6 +2,7 @@ package com.marcoantdev.handler.categorize.csv;
 
 import com.marcoantdev.handler.BaseHandler;
 import com.marcoantdev.handler.context.CsvContext;
+import com.marcoantdev.utils.CsvUtils;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,17 +13,6 @@ import java.util.Map;
 @Slf4j
 @ApplicationScoped
 public class CategorizeCsvExpensesHandler extends BaseHandler<CsvContext> {
-    private static final Map<String, String> CATEGORY_MAP = Map.of(
-            "MERCADO", "Alimentação",
-            "UBER", "Transporte",
-            "IFOOD", "Delivery",
-            "PIX", "Transferência",
-            "AMAZON", "Entretenimento",
-            "HORTIFRUTI", "Alimentação",
-            "FARMACIA", "Saúde",
-            "IFD", "Alimentação",
-            "HONEST", "Alimentação"
-    );
 
     @Override
     public void handle(CsvContext context) throws Exception {
@@ -34,38 +24,32 @@ public class CategorizeCsvExpensesHandler extends BaseHandler<CsvContext> {
         Map<String, Double> expenses = new HashMap<>();
 
         for (String[] row : rows) {
-            if (row.length < 3) {
-                log.warn("Skipping invalid CSV row: " + String.join(",", row));
+            if (row.length < 5) {
+                log.warn("Skipping invalid CSV row: {}", String.join(",", row));
                 continue;
             }
 
             String description = row[1].trim();
-            double amount = Double.parseDouble(row[2].trim());
+            String category = row[2].trim();
+            String rawValue = row[4].trim();
 
-            String category = identifyCategory(description);
+            double amount;
+            try {
+                String cleanedValue = CsvUtils.cleanMonetaryValue(rawValue);
+                amount = CsvUtils.parseDouble(cleanedValue);
+            } catch (Exception e) {
+                log.warn("Skipping invalid value for row: {}", String.join(",", row));
+                continue;
+            }
 
-            expenses.merge(description, amount, Double::sum);
-            log.info(String.format("Transaction: %s | %.2f | %s", description, amount, category));
+            String key = category + " - " + description;
+            expenses.merge(key, amount, Double::sum);
+
+            log.info(String.format("Processed: %s | %.2f | %s", description, amount, category));
         }
 
         context.setExpenses(expenses);
         log.info("✅ CSV Categorization completed successfully.");
     }
-
-    private String identifyCategory(String description) {
-        String category = CATEGORY_MAP.entrySet().stream()
-                .filter(entry -> description.toUpperCase().contains(entry.getKey()))
-                .map(Map.Entry::getValue)
-                .findFirst()
-                .orElse("Outros");
-
-        if (category.equals("Outros")) {
-            if (description.toUpperCase().contains("LANCHONETE") ||
-                    description.toUpperCase().contains("PADARIA") ||
-                    description.toUpperCase().contains("RESTAURANTE")) {
-            }
-        }
-
-        return category;
-    }
 }
+
